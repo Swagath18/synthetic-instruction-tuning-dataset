@@ -11,12 +11,7 @@ total_tokens_used = 0
 total_cost_usd = 0
 
 load_dotenv()
-# Create OpenAI client
 client = OpenAI()
-
-# ---------------------
-# Parameters
-# ---------------------
 
 TOPICS = ["Astronomy", "Physics", "Computer Science", "Mathematics", "History"]
 N_SAMPLES = 10
@@ -58,7 +53,7 @@ def generate_instruction_answer(topic):
         global total_tokens_used, total_cost_usd
         total_tokens_used += total_tokens
         total_cost_usd += cost
-        print(f"🧮 Total tokens used: {total_tokens_used} | Estimated cost: ${total_cost_usd:.4f}")
+        print(f" Total tokens used: {total_tokens_used} | Estimated cost: ${total_cost_usd:.4f}")
 
         return parse_response(content)
 
